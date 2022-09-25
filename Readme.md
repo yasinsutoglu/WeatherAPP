@@ -1,7 +1,7 @@
-<h1 align="center">Flag App</h1>
+<h1 align="center">Weather App</h1>
 
 <h3>Overview</h3>
-👨‍💻 In this project I mastered API and DOM skills. I used mainly HTML, CSS and JS (DOM Manipulation), FetchAPI, Async/Await. You can see visual demo of the website below. The objective is to build out this real-like webpage and make it looking as professional as possible..
+👨‍💻 In this project I mastered API and DOM skills. I used mainly HTML, CSS and JS (DOM Manipulation), FetchAPI. You can see visual demo of the website below. The objective is to build out this real-like webpage and make it looking as professional as possible..
 <hr>
 
 ## ✨ Demo
