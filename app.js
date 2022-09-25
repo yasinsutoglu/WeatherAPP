@@ -33,17 +33,17 @@ const renderWeather = function(data){
     if(!cities.includes(name)){
         cities.push(name);
         weatherDiv.innerHTML += `
-    <div class="col-md-6">
-        <div class="card mb-3" style="max-width: 540px;">
+    <div class="col-md-6 col-lg-4">
+        <div class="card mb-3">
         <div class="row g-0">
-            <div class="col-md-4">
-                <img src="http://openweathermap.org/img/wn/${weather[0].icon}@2x.png"/>
+            <div class="col-md-3 d-flex align-items-center justify-content-center">
+                <img class="w-100" src="http://openweathermap.org/img/wn/${weather[0].icon}@2x.png"/>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-9">
                 <div class="card-body">
-                    <h5 class="card-title">${name} <span class="bg-warning border rounded-pill">${country}</span></h5>
-                    <p class="card-text">${Math.round(temp)}°C</p>
-                    <p class="card-text text-muted">${
+                    <h5 class="card-title fs-5 fw-bold">${name} <span class="bg-warning p-1">${country}</span></h5>
+                    <p class="card-text fs-1 mt-1">${Math.round(temp)}°C</p>
+                    <p class="card-text text-muted fs-5">${
                       weather[0].description
                     }</p>
                 </div>
@@ -56,11 +56,7 @@ const renderWeather = function(data){
         setTimeout(()=>{
             warningText.textContent="";
         },1500)
-    }
-    
-
-    // console.log(weather[0]["description"])  
-
+    }   
     
 }
 
@@ -72,6 +68,8 @@ btnSubmit.addEventListener("click", ()=>{
 });
 
 function renderError(){
-    header.style.display = "none";
-    weatherDiv.innerHTML =` <h2>Searched city's weather could not be fetched</h2>`;
+      warningText.innerText = `Please enter a valid city`;
+      setTimeout(() => {
+        warningText.innerText = "";
+      }, 3000);
 }

@@ -13,14 +13,14 @@
   </head>
   <body>
 
-    <div class="container w-75 mx-auto text-center">
+    <div class="container-fluid text-center">
         <header>
-            <h1 class="display-3">Weather App</h1>
+            <h1 class="display-3 text-white fw-bold ">Weather App</h1>
             <div class="input-div d-flex justify-content-center align-items-center gap-3">
-                <input class="lh-lg w-50 border border-bottom-3 border-top-0 border-start-0 border-end-0" type="text" id="input" placeholder="search for a city">
+                <input class="lh-lg w-50 border border-bottom-3 border-top-0 border-start-0 border-end-0 ps-3" type="text" id="input" placeholder="search for a city">
                 <button id="submit" class="btn btn-danger">SUBMIT</button>
-                <p id="warning-text"></p>
             </div>
+            <p id="warning-text" class="mt-2 fs-3 fw-bold fst-italic text-warning"></p>
         </header>
         <div class="weather-content row mt-5">
 
