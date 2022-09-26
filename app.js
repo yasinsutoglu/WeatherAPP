@@ -8,7 +8,22 @@ const warningText = document.getElementById("warning-text")
 const API_KEY = "9a6c58097c1634ecf28c8895c5827ca1"
 
 let cities = [];
- 
+
+btnSubmit.addEventListener("click", ()=>{
+
+    if(!cityInput.value){
+        warningText.innerText = "Please enter a city";
+        setTimeout(()=>{
+            warningText.innerText = "";
+        },2000)
+    }else{
+        getWeather(cityInput.value);
+        cityInput.value = "";
+    }
+    
+});
+
+
 
 const getWeather = function(cityName){
 
@@ -55,21 +70,26 @@ const renderWeather = function(data){
         warningText.textContent = `You already know the weather condition for ${name}. Pls search for another city`;
         setTimeout(()=>{
             warningText.textContent="";
-        },1500)
+        },2000)
     }   
     
 }
 
-
-btnSubmit.addEventListener("click", ()=>{
-
-    getWeather(cityInput.value);
-    cityInput.value = "";
-});
-
-function renderError(){
-      warningText.innerText = `Please enter a valid city`;
-      setTimeout(() => {
-        warningText.innerText = "";
-      }, 3000);
+function renderError() {
+  warningText.innerText = `Please enter a valid city`;
+  setTimeout(() => {
+    warningText.innerText = "";
+  }, 3000);
 }
+
+
+cityInput.addEventListener("keydown" , (e)=>{
+    if(e.code === "Enter"){
+        btnSubmit.click();
+    }
+})
+
+
+window.addEventListener("load", ()=>{
+    cityInput.focus();
+})
