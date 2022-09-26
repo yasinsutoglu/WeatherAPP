@@ -45,14 +45,26 @@ const renderWeather = function(data){
     // console.log(data)
     const {name, sys:{country}, main:{temp}, weather} = data;
 
-    if(!cities.includes(name)){
+    if(cities.includes(name)){
+        warningText.textContent = `You already know the weather condition for ${name}. Pls search for another city`;
+        setTimeout(() => {
+          warningText.textContent = "";
+        }, 2000);
+    }else if(cities.length>=6){
+        warningText.textContent = `You cannot add more than 6 cities `;
+        setTimeout(() => {
+          warningText.textContent = "";
+        }, 2000);
+    }else{
         cities.push(name);
         weatherDiv.innerHTML += `
     <div class="col-md-6 col-lg-4">
         <div class="card mb-3">
         <div class="row g-0">
             <div class="col-md-3 d-flex align-items-center justify-content-center">
-                <img class="w-100" src="http://openweathermap.org/img/wn/${weather[0].icon}@2x.png"/>
+                <img class="w-100" src="http://openweathermap.org/img/wn/${
+                  weather[0].icon
+                }@2x.png"/>
             </div>
             <div class="col-md-9">
                 <div class="card-body">
@@ -66,11 +78,6 @@ const renderWeather = function(data){
         </div>
     </div>
 </div>`;
-    }else{
-        warningText.textContent = `You already know the weather condition for ${name}. Pls search for another city`;
-        setTimeout(()=>{
-            warningText.textContent="";
-        },2000)
     }   
     
 }
