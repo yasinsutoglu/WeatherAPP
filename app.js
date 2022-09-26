@@ -58,21 +58,17 @@ const renderWeather = function(data){
     }else{
         cities.push(name);
         weatherDiv.innerHTML += `
-    <div class="col-md-6 col-lg-4">
+    <div class="col-sm-6 col-lg-4">
         <div class="card mb-3">
         <div class="row g-0">
-            <div class="col-md-3 d-flex align-items-center justify-content-center">
-                <img class="w-100" src="http://openweathermap.org/img/wn/${
-                  weather[0].icon
-                }@2x.png"/>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+                <img src="http://openweathermap.org/img/wn/${weather[0].icon}@2x.png"/>
             </div>
-            <div class="col-md-9">
+            <div class="col-9">
                 <div class="card-body">
                     <h5 class="card-title fs-5 fw-bold">${name} <span class="bg-warning p-1">${country}</span></h5>
                     <p class="card-text fs-1 mt-1">${Math.round(temp)}°C</p>
-                    <p class="card-text text-muted fs-5">${
-                      weather[0].description
-                    }</p>
+                    <p class="card-text text-muted fs-5">${weather[0].description}</p>
                 </div>
             </div>
         </div>
