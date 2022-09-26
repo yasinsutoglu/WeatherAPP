@@ -14,7 +14,7 @@
 
 <hr>
 
-[📍click here to see page](https://yasinsutoglu.github.io/Flag-App-API/)
+[📍click here to see page](https://yasinsutoglu.github.io/WeatherAPP/)
 
 <!-- ------------------------------------------------------ -->
 
@@ -27,6 +27,7 @@ App(folder)
 |----solution
         |----index.html  
         |----app.js  
+        |----style.css 
 ```
 
 <!-- --------------------------------------- -->
@@ -45,7 +46,7 @@ App(folder)
 
 - Bootstrap / Card Element and style classes etc.
 
-- JS / DOM Manipulation - Arrow Function - Events - Conditionals - Functions - Fetch API - ASYNC/Await
+- JS / DOM Manipulation - Arrow Function - Events - Conditionals - Functions - Fetch API 
 ### At the end of the project, i will be able to;
 
 - improve coding skills within HTML & CSS & JS
@@ -61,7 +62,7 @@ App(folder)
 <hr>
 <h3>How to Use the Project</h3>
 <span>First download a code editor </span>
-<br><span>Second open the files : </span><a href='https://github.com/yasinsutoglu/parallax-page'>My Docs</a>
+<br><span>Second open the files : </span><a href='https://github.com/yasinsutoglu/WeatherAPP'>My Docs</a>
 <br><span>You can use this tutorial : </span><a href='https://www.youtube.com/watch?v=fJEbVCrEMSE'>VS Code tutorial</a>
 
 <!-- ------------------------------------------------------------------------- -->
