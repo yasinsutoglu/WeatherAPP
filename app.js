@@ -53,8 +53,8 @@ const renderWeather = function(data){
         setTimeout(() => {
           warningText.textContent = "";
         }, 2000);
-    }else if(cities.length>=6){
-        warningText.textContent = `You cannot add more than 6 cities `;
+    }else if(cities.length>=3){
+        warningText.textContent = `You cannot add more than 3 cities `;
         setTimeout(() => {
           warningText.textContent = "";
         }, 2000);
