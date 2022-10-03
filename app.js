@@ -7,6 +7,7 @@ const warningText = document.getElementById("warning-text")
 
 
 let API_KEY = "m93g9j9Ql4x22sQhy4BZiLOb03xevC7Tx6vJG73KwUjY1jTAiPGCKmt1oeiKSok/";
+API_KEY = DecryptStringAES(API_KEY);
 
 let cities = [];
 
@@ -26,14 +27,13 @@ btnSubmit.addEventListener("click", ()=>{
 
 
 
-const getWeather = function(cityName){
-
-    API_KEY = DecryptStringAES(API_KEY)
+const getWeather = function(cityName){    
 
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`;
 
     fetch(url).then((res) =>{
-
+        
+        console.log(res)
         if(!res.ok){
             renderError()
             throw new Error(`Weather could not be fetched! : ${res.status}`)
@@ -53,8 +53,8 @@ const renderWeather = function(data){
         setTimeout(() => {
           warningText.textContent = "";
         }, 2000);
-    }else if(cities.length>=3){
-        warningText.textContent = `You cannot add more than 3 cities `;
+    }else if(cities.length>=6){
+        warningText.textContent = `You cannot add more than 6 cities `;
         setTimeout(() => {
           warningText.textContent = "";
         }, 2000);
