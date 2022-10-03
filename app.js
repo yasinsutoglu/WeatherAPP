@@ -5,7 +5,8 @@ const header = document.querySelector("header");
 const weatherDiv = document.querySelector(".weather-content");
 const warningText = document.getElementById("warning-text")
 
-const API_KEY = "9a6c58097c1634ecf28c8895c5827ca1"
+
+let API_KEY = "m93g9j9Ql4x22sQhy4BZiLOb03xevC7Tx6vJG73KwUjY1jTAiPGCKmt1oeiKSok/";
 
 let cities = [];
 
@@ -26,6 +27,8 @@ btnSubmit.addEventListener("click", ()=>{
 
 
 const getWeather = function(cityName){
+
+    API_KEY = DecryptStringAES(API_KEY)
 
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`;
 
